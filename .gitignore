@@ -1,0 +1,17 @@
+webstat/
+temp/
+page/
+keep/
+maintain
+noedit
+pageidx
+curquestion
+rc.log
+oldrc.log
+rc.log.old
+spammer.log
+visitors.log
+private-wiki
+private-wiki.pl
+logs/
+data/

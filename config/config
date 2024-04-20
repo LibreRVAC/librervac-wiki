@@ -1,0 +1,52 @@
+use utf8;
+package OddMuse;
+
+$ENV{TZ} = 'UTC';
+$SiteName  = "LibreRVAC";
+
+use Digest::SHA qw(sha256_hex);
+$PassHashFunction = 'sha256_hex';
+$PassSalt = '';
+$AdminPass = '0d56fd9200ccc3b71e2c1a25361fd5edddb1afdf6939711a6bb08a8383649291';
+
+$CommentsPrefix = 'Comments_on_';
+$CommentsPattern = "^(?|Comments_on_(.*)|.*)\$";
+$EditAllowed = 1;
+$StyleSheet = '/css/stylesheet.css';
+$MaxPost = 430080;
+$HomePage = 'Home';
+$RCName = 'Recent Changes';
+$SurgeProtectionViews = 20;
+
+$GitMail = 'anybody@librervac.org';
+
+$FullUrl = ($ENV{'HTTPS'} ? 'https' : 'http') . '://librervac.org';
+$ScriptName = ($ENV{'HTTPS'} ? 'https' : 'http') . '://librervac.org';
+
+$CreoleLineBreaks = 1;
+$CreoleTableCellsAllowBlockLevelElements = 1;
+$CreoleDashStyleUnorderedLists = 1;
+
+#$HtmlHeaders .= '<script type="text/javascript" src="/js/underlineAccesskeys.js"></script>';
+
+@QuestionaskerQuestions = (
+  ['Type "LibreRVAC" here:' => sub { shift =~ /rvac/i }] # XXX will /i handle non-ascii characters here?
+);
+
+push @PygmentizeArgs, qw(-O style=native);
+
+$Translate{'Journal'} = ' ';
+$Translate{'Edit this page'} = 'Edit';
+$Translate{'Comments on this page'} = 'Comments';
+
+sub GetHeaderTitle {
+  my ($id, $title, $oldId) = @_;
+  return $q->h1($title) if $id eq '';
+  return $q->h1(((UserCanEdit($id, 0) and $id ne $AskPage) ? GetEditLink($id, T('Edit this page'), undef, T('e')) : '') .
+		GetSearchLink($id, '', '', T('Click to search for references to this page')));
+}
+
+sub PrintPageCommentsLink {
+  my ($id, $comments) = @_;
+  print $q->p({-class=>'comment'}, GetPageLink($id, T('Comments on this page')));
+}

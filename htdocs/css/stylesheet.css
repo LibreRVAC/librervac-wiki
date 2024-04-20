@@ -1,0 +1,455 @@
+@font-face {
+    font-family: terminus1;
+    src: url(../fonts/TerminusRe33-Bold.ttf);
+}
+
+@font-face {
+    font-family: terminus2;
+    src: url(../fonts/TerminusTTF-4.38.2.ttf);
+}
+
+body {
+    background-color: #151515;
+    color: #B0B0B0;
+    font-family: terminus1, terminus2, Courier, monospace;
+    margin: 12px 0px;
+}
+
+.header, .wrapper, .footer {
+    max-width: 900px;
+    text-align: left;
+    margin: 0px auto;
+}
+
+/*.footer a {
+    white-space:nowrap;
+} */
+
+form.search {
+    padding: 10px;
+    margin: 5px;
+    float: right;
+}
+
+form.search p {
+    display: inline;
+}
+
+form.search input[type="text"] {
+    width: 140px;
+    padding: 3px 12px;
+    margin-top: -3px;
+}
+
+form.search input[type="submit"] {
+    display: none;
+}
+
+h1 {
+    display: inline-block;
+    width: 100%;
+}
+
+h1>a.edit {
+    float: right;
+    text-decoration: none;
+    font-size: 50%;
+    font-weight: normal;
+    color: #DDDDDD;
+    padding: 8px;
+}
+
+span.accesskey {
+    text-decoration: underline;
+}
+
+a {
+    color: #6A9FB5;
+    text-decoration: none;
+    font-family: terminus1, terminus2, Courier, monospace;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.header .gotobar {
+    font-family: terminus1;
+    line-height: 50px;
+}
+
+
+.header>h1 {
+    margin-top: 32px;
+    margin-bottom: 4px;
+    position: inherit;
+    font-weight: normal;
+}
+
+div.page h1 {
+    margin: 0px 3px;
+    font-size: 18px;
+}
+
+strong, th, h1, h2, h3, h4 {
+    font-weight: normal; /* bold terminus does not look good */
+}
+
+/*h1:before {
+    content: "you@ProgArm:~/";
+    font-size: 17px;
+}
+h1:after {
+    content: "$";
+    font-size: 17px;
+}*/
+
+h2 {
+    border-bottom: 1px solid #555;
+}
+
+h3 {
+    margin-top: 28px;
+    font-weight: normal;
+}
+
+.gotobar>a {
+    font-size: 16px;
+    padding: 14px;
+    margin: 0px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.header>.gotobar>a:hover {
+    text-decoration: none;
+    outline: #B0B0B0 solid 1px;
+}
+
+.local {
+    height: 100%;
+}
+
+input, textarea {
+    color: #B0B0B0;
+    background-color: #111111;
+    border-style: solid;
+    border-color: #888888;
+    border-width: 1px;
+    font-family: terminus1, terminus2, Courier, monospace;
+}
+
+.footer .edit a {
+    margin-right: 25px;
+}
+
+.footer br {
+    margin-bottom: 5px;
+}
+
+input {
+    font-size:95%;
+}
+
+table.user {
+    border-collapse: collapse;
+}
+
+table.user tr td {
+    border: 1px solid #B0B0B0;
+    padding: 3px;
+    margin: 0px;
+}
+
+.homepage {
+    display: none;
+}
+
+a.number {
+    font-size: 60%; /* TODO fix px and % mess */
+    vertical-align: top;
+}
+
+li {
+    margin: 4px 0px;
+}
+
+p.comment {
+    margin: 50px 0px 0px 0px;
+}
+
+div.page p.comment {
+    margin: 0px 0px 0px 0px;
+}
+
+strong {
+    text-shadow: -1px 0px 0px;
+}
+
+code {
+    font-size: 16px;
+    font-family: terminus1;
+}
+
+.real {
+    font-size: 14px;
+    display: inline-block;
+    background: #303030;
+    border: #B0B0B0 dashed 1px;
+    padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.rc>p a {
+    padding: 0px 10px;
+}
+
+div.page {
+    background-color: #202020;
+    border-color: #BBBBBB;
+    border-radius: 1px;
+    padding: 10px;
+    margin: 20px 0px 5px 0px;
+    font-size: 100%;
+}
+
+div.page>.userComment {
+    counter-increment: commentscount;
+}
+
+div.page p.comment:after {
+    content: " (" counter(commentscount) ")";
+}
+
+div.page>.userComment, div.page>.commentsHeading {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.commentsHeading {
+    margin-top: 50px;
+}
+
+.userComment {
+    background-color: #202020;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 70%;
+    border-radius: 3px;
+}
+
+.more {
+    margin-top: 6px;
+    margin-bottom: 35px;
+}
+
+.logo {
+    display: inline;
+}
+
+img {
+    max-width: 100%;
+}
+
+.old, .diffactionold, .updaterold {
+    background-color: #371111;
+}
+
+.new, .diffactionnew, .updaternew {
+    background-color: #113711;
+}
+
+#aftertext {
+    width: 570px;
+    height: 175px;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+.right img {
+    max-width: 300px;
+    padding: 20px;
+}
+
+.subroutine {
+    color: #87cefa;
+}
+
+.variable {
+    color: #eedd82;
+}
+
+.key {
+    text-align: center;
+}
+
+.foo_nextversion, .foo_currentversion, .foo_oldversion, .foo_yes, .foo_nope, .foo_kinda {
+    padding: 3px;
+    display: block;
+}
+
+.foo_nextversion {
+    background-color: #111137;
+}
+
+.foo_kinda {
+    background-color: #373711;
+}
+
+.foo_currentversion, .foo_yes {
+    background-color: #113711;
+}
+
+.foo_oldversion, .foo_nope {
+    background-color: #371111;
+}
+
+.imageholder {
+    display: inline-block;
+}
+
+.imagecomment {
+    text-align: center;
+    font-size: 18px;
+    border-style: solid;
+    border-color: #880000;
+    border-width: 3px;
+    color: rgba(0,0,0,0);
+}
+
+.component {
+    border-color: #000088;
+}
+
+.switch {
+    border-color: #880000;
+}
+
+.port {
+    border-color: #00CC44;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.imagecomment:hover {
+    color: #EEEEFF;
+    text-shadow: 2px 0px #000000, -2px -0px #000000, 0px 2px #000000, 0px -2px #000000, -2px -2px #000000, 2px 2px #000000, -2px 2px #000000, 2px -2px #000000;
+    /*display: inline-block !important;*/
+    /*width: auto !important;*/
+    border-style: none;
+}
+
+.key {
+    border-bottom: 1px dashed #B0B0B0;
+}
+
+.key:hover {
+    background: #333333;
+    border-bottom: 1px dotted #B0B0B0;
+}
+
+.keyspacer {
+    width: 7px;
+}
+
+.keyname {
+    color: #DDDDDD;
+    padding: 0px 4px;
+    background: #333333;
+}
+
+.key1, .foo_key1 {
+    color: #90EE59;
+}
+
+.key2, .foo_key2 {
+    color: #6A9FFF;
+}
+
+.keynone {
+    color: #606060;
+}
+
+.foo_todo {
+    background-color: #111137;
+}
+
+.foo_done {
+    background-color: #113711;
+}
+
+.foo_undecided {
+    background-color: #373711;
+}
+
+div.foo_outdated {
+    font-size: 120%;
+    padding: 12px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-left: 10px solid #FFCC33;
+    background-image: repeating-linear-gradient(45deg, black 0px, black 25px, transparent 25px, transparent 50px, black 50px);
+}
+
+div.foo_notimplemented {
+    font-size: 120%;
+    padding: 12px 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-left: 10px solid #4466EE;
+    background-image: repeating-linear-gradient(45deg, black 0px, black 25px, transparent 25px, transparent 50px, black 50px);
+}
+
+.foo_donate>a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #DDDDDD;
+    box-shadow: 0px 0px 4px #AAAAAA;
+    border-radius: 2px;
+    padding: 10px;
+    background: -webkit-linear-gradient(#10B316 , #0B7D0F); /* For Safari */
+    background: -o-linear-gradient(#10B316, #0B7D0F); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#10B316, #0B7D0F); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#10B316, #0B7D0F); /* Standard syntax */
+}
+
+.question blockquote {
+    display: inline-block;
+    padding: 0px 20px;
+    margin: 5px;
+    background-color: #222222;
+}
+
+.highlight {
+    padding: 5px;
+    border-style: dashed;
+    border-width: 1px;
+}
+
+code {
+    padding: 2px;
+    border-style: dashed;
+    border-width: 1px;
+}
+
+pre {
+    margin: 2px;
+}
