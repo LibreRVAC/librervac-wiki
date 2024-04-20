@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  backend:
+    image: postmodern.alexdaniel.org/librervac-backend:latest
+    build:
+      context: .
+    volumes:
+      - /home/librervac/data/librervac/data:/srv/data
+      - /home/librervac/data/librervac/logs:/srv/logs
+    networks:
+      - caddy
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 30s
+        order: start-first
+
+      labels:
+        caddy: librervac.org, www.librervac.org
+        caddy.tls: alex.jakimenko+caddy@gmail.com
+        caddy.reverse_proxy: "{{upstreams 80}}"
+
+networks:
+  caddy:
+    external: true
