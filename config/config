@@ -20,8 +20,8 @@ $SurgeProtectionViews = 20;
 
 $GitMail = 'anybody@librervac.org';
 
-$FullUrl = ($ENV{'HTTPS'} ? 'https' : 'http') . '://librervac.org';
-$ScriptName = ($ENV{'HTTPS'} ? 'https' : 'http') . '://librervac.org';
+$FullUrl = 'https://librervac.org';
+$ScriptName = 'https://librervac.org';
 
 $CreoleLineBreaks = 1;
 $CreoleTableCellsAllowBlockLevelElements = 1;
