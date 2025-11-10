@@ -25,7 +25,7 @@ jobs:
           tags: postmodern.alexdaniel.org/librervac-backend:${{ github.sha }} ${{ github.ref == 'refs/heads/main' && ', postmodern.alexdaniel.org/librervac-backend:latest' || '' }}
       - name: Set SSH key
         if: github.ref == 'refs/heads/main'
-        uses: webfactory/ssh-agent@v0.9.0
+        uses: webfactory/ssh-agent@v0.9.1
         with:
           ssh-private-key: ${{ secrets.SSH_KEY }}
       - name: Auth
