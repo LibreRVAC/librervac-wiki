@@ -1,4 +1,4 @@
-FROM httpd:2.4.59
+FROM httpd:2.4.65
 
 RUN apt-get update
 RUN apt-get install -y libcgi-pm-perl libcapture-tiny-perl libdatetime-perl libcapture-tiny-perl libgeo-ip-perl
